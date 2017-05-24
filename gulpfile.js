@@ -35,7 +35,7 @@ gulp.task('sass', function(done) {
 gulp.task('ng_annotate', function (done) {
     gulp.src(paths.ng_annotate)
       .pipe(ngAnnotate({single_quotes: true}))
-      .pipe(gulp.dest('./www/dist/dist_js/app'))
+      .pipe(gulp.dest('./www/module'))
       .on('end', done);
 });
 
@@ -52,7 +52,7 @@ gulp.task('views', function() {
       standalone: true
     }))
     .pipe(concat('templates.js'))
-    .pipe(gulp.dest('./www/js/'))
+    .pipe(gulp.dest('./www/module/'))
 });
 
 gulp.task('watch', function() {
